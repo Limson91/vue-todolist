@@ -16,7 +16,7 @@
                 <div class="card__header">To Do List</div>
                 <div class="card__body">
                     <ul class="tasks-list">
-                        <li v-for="todoList in todoList"
+                        <li v-for="(todoList, index) in todoList"
                             class="task__item" 
                             :class="todoList.done === true ? 'done' : '' ">
                             <!-- Per aggiungere più condizioni fai
@@ -34,8 +34,8 @@
                             }"-->
                             <!-- {{ todoList.text }} -->
 
-                            <span class="task-title"> {{ todoList.text }}</span>
-                            <i @click="checkTask" class="fa-solid fa-check"></i>
+                            <span class="task-title"> {{ todoList.text }} </span>
+                            <i @click="checkTask(index)" class="fa-solid fa-check"></i>
                         </li>
                         <!-- <li class="task__item">
                             Lista cose da fare

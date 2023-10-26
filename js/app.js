@@ -31,8 +31,9 @@ createApp({
     },
 
     methods: {
-        checkTask() {
-            console.log("click on check!")
+        checkTask(i) {
+            console.log("click on check!");
+            this.todoList.splice(i, 1)
         }
     }
 }).mount('#app')
