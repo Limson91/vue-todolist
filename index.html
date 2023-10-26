@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://kit.fontawesome.com/89e0a71f31.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="card">
+                <div class="card__header">To Do List</div>
+                <div class="card__body">
+                    <ul class="tasks-list">
+                        <li v-for="todoList in todoList"
+                            class="task__item" 
+                            :class="todoList.done === true ? 'done' : '' ">
+                            <!-- Per aggiungere più condizioni fai
+                            :class="[ternario, ternario, ternario, eccetera]" 
+                            Per eliminare la dicitura class="task__item (riga 18):
+                            :class="[todoList.done === true ? 'done' : '', 'task__item']"
+                        
+                            OPPURE creare oggetto
+                            class="task__item"
+                            :class="{
+                                'done': true, //a questo punto tutti gli elementi hanno la classe done presente.
+                                'task__item': true,
+                                'active': false //questa classe non c'è in nessun oggetto
+                                'done': todoList.done, //qua la classe viene confrontata col valore 'done' presente nell'array su JS.
+                            }"-->
+                            <!-- {{ todoList.text }} -->
+
+                            <span class="task-title"> {{ todoList.text }}</span>
+                            <i @click="checkTask" class="fa-solid fa-check"></i>
+                        </li>
+                        <!-- <li class="task__item">
+                            Lista cose da fare
+                        </li>
+                        <li class="task__item">
+                            Lista cose da fare
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+<script src="./js/app.js"></script>
+</body>
+</html>
